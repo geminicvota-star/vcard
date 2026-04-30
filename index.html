@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ASKAROV KOSTYA | Контакты</title>
+    <title>Askarov Kostya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-color: #121212;
@@ -198,6 +199,18 @@
             color: #4ade80;
         }
 
+        .color-fb {
+            color: #1877f2;
+        }
+
+        .color-ok {
+            color: #f2720c;
+        }
+
+        .color-vk {
+            color: #0077ff;
+        }
+
         .humo {
             color: #facc15;
         }
@@ -233,27 +246,41 @@
 
     <div class="profile-container">
         <img src="photo_2026-04-30_12-14-46.jpg" alt="Logo" class="profile-img">
-        <h1>ASKAROV KOSTYA</h1>
-        <p>контакты | телеграмм | инстаграмм</p>
+        <h1>Askarov Kostya</h1>
+        <p>TikTok | Instagram | Facebook | VK | OK | Telegram</p>
     </div>
 
     <div class="content-container">
         <!-- Ссылки -->
         <div class="links-group">
             <a href="https://t.me/vseoprovoslavue" class="btn">
-                <span class="icon-box color-tg">💻</span> ТГ-канал
+                <span class="icon-box color-tg"><i class="fa-brands fa-telegram"></i></span> ТГ-канал
             </a>
 
             <a href="https://t.me/Gloza" class="btn">
-                <span class="icon-box color-tg">💬</span> Написать в Личку
+                <span class="icon-box color-tg"><i class="fa-solid fa-comment-dots"></i></span> Написать в Личку
             </a>
 
             <a href="https://www.instagram.com/k61085239/" class="btn">
-                <span class="icon-box color-inst">📸</span> Instagram
+                <span class="icon-box color-inst"><i class="fa-brands fa-instagram"></i></span> Instagram
             </a>
 
             <a href="tel:+998200278885" class="btn">
-                <span class="icon-box color-phone">📞</span> Позвонить мне
+                <span class="icon-box color-phone"><i class="fa-solid fa-phone"></i></span> Позвонить мне
+            </a>
+
+            <a href="https://www.facebook.com/share/1Ai2j3GDHk/?mibextid=wwXIfr" class="btn" target="_blank"
+                rel="noopener noreferrer">
+                <span class="icon-box color-fb"><i class="fa-brands fa-facebook"></i></span> Facebook
+            </a>
+
+            <a href="https://ok.ru/profile/516923956874?utm_campaign=ios_share&utm_content=profile" class="btn"
+                target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-ok"><i class="fa-brands fa-odnoklassniki"></i></span> Одноклассники
+            </a>
+
+            <a href="https://vk.ru/id516462420" class="btn" target="_blank" rel="noopener noreferrer">
+                <span class="icon-box color-vk"><i class="fa-brands fa-vk"></i></span> ВКонтакте
             </a>
         </div>
 
@@ -263,7 +290,7 @@
         <div class="payment-cards">
             <div class="compact-card">
                 <div class="card-details">
-                    <span class="card-title"><span class="visa">VISA</span> <span class="humo">      </span></span>
+                    <span class="card-title"><span class="visa">VISA</span> <span class="    "> </span></span>
                     <span class="card-number" id="main-card">4916 9903 0852 3270</span>
                 </div>
                 <button class="copy-btn-compact" onclick="copyText('main-card', this)">Copy</button>
