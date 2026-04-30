@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yunusov Tech | Контакты</title>
+    <style>
+        :root {
+            --bg-color: #121212;
+            --surface-color: #1e1e1e;
+            --surface-hover: #2a2a2a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --accent-blue: #38bdf8;
+            --border-radius: 16px;
+            --transition: 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-blue);
+            margin-bottom: 16px;
+            object-fit: cover;
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .content-container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .links-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            text-decoration: none;
+            color: var(--text-primary);
+            background: var(--surface-color);
+            padding: 16px 20px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background: var(--surface-hover);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+            background: #222;
+        }
+
+        .icon-box {
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+        }
+
+        h2.section-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            margin-bottom: -16px;
+            padding-left: 8px;
+        }
+
+        .payment-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .compact-card {
+            background: var(--surface-color);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--border-radius);
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .compact-card:hover {
+            background: var(--surface-hover);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .card-details {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .card-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .card-number {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: var(--text-primary);
+        }
+
+        .copy-btn-compact {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            border: none;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .copy-btn-compact:hover {
+            background: var(--accent-blue);
+            color: #000;
+        }
+
+        .copy-btn-compact:active {
+            transform: scale(0.92);
+        }
+
+        .color-tg {
+            color: #38bdf8;
+        }
+
+        .color-inst {
+            color: #f472b6;
+        }
+
+        .color-phone {
+            color: #4ade80;
+        }
+
+        .humo {
+            color: #facc15;
+        }
+
+        .visa {
+            color: #60a5fa;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #34d399;
+            color: #064e3b;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="profile-container">
+        <img src="photo_2026-04-30_12-14-46.jpg" alt="Logo" class="profile-img">
+        <h1>Yunusov Tech</h1>
+        <p>Сборка ПК | Софт | Решения</p>
+    </div>
+
+    <div class="content-container">
+        <!-- Ссылки -->
+        <div class="links-group">
+            <a href="https://t.me/vseoprovoslavue" class="btn">
+                <span class="icon-box color-tg">💻</span> ТГ-канал
+            </a>
+
+            <a href="https://t.me/Gloza" class="btn">
+                <span class="icon-box color-tg">💬</span> Написать в Личку
+            </a>
+
+            <a href="https://www.instagram.com/k61085239/" class="btn">
+                <span class="icon-box color-inst">📸</span> Instagram
+            </a>
+
+            <a href="tel:+998200278885" class="btn">
+                <span class="icon-box color-phone">📞</span> Позвонить мне
+            </a>
+        </div>
+
+        <!-- Реквизиты -->
+        <h2 class="section-title">Номер карты (Мультикард)</h2>
+
+        <div class="payment-cards">
+            <div class="compact-card">
+                <div class="card-details">
+                    <span class="card-title"><span class="visa">VISA</span> <span class="humo">      </span></span>
+                    <span class="card-number" id="main-card">4916 9903 0852 3270</span>
+                </div>
+                <button class="copy-btn-compact" onclick="copyText('main-card', this)">Copy</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Номер скопирован!</div>
+
+    <script>
+        function copyText(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).innerText.replace(/\s+/g, '');
+
+            // Запасной метод через textarea (для лучшей совместимости на мобильных)
+            const copyToClipboardFallback = (text) => {
+                const textArea = document.createElement("textarea");
+                textArea.value = text;
+                textArea.style.position = "fixed";
+                document.body.appendChild(textArea);
+                textArea.focus();
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Fallback: Oops, unable to copy', err);
+                }
+                document.body.removeChild(textArea);
+            };
+
+            const handleSuccess = () => {
+                const originalText = btnElement.innerText;
+                btnElement.innerText = 'Copied!';
+                btnElement.style.background = '#34d399';
+                btnElement.style.color = '#064e3b';
+
+                const toast = document.getElementById('toast');
+                toast.classList.add('show');
+
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.style.background = '';
+                    btnElement.style.color = '';
+                    toast.classList.remove('show');
+                }, 2000);
+            };
+
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textToCopy)
+                    .then(handleSuccess)
+                    .catch(err => {
+                        console.error('Failed to copy text: ', err);
+                        copyToClipboardFallback(textToCopy);
+                        handleSuccess();
+                    });
+            } else {
+                copyToClipboardFallback(textToCopy);
+                handleSuccess();
+            }
+        }
+    </script>
+</body>
+
+</html>
